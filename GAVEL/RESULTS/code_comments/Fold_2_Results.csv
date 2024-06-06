@@ -1,0 +1,755 @@
+,text,label,Dependency management_prediction,Dependency management_label,Support_prediction,Support_label,Testing_prediction,Testing_label,Reporting_prediction,Reporting_label,Mobile CI_prediction,Mobile CI_label,Community_prediction,Community_label,Security_prediction,Security_label,Chat_prediction,Chat_label,IDEs_prediction,IDEs_label,Monitoring_prediction,Monitoring_label,Code review_prediction,Code review_label,Code quality_prediction,Code quality_label,Publishing_prediction,Publishing_label,Project management_prediction,Project management_label,API management_prediction,API management_label,Open Source management_prediction,Open Source management_label,Mobile_prediction,Mobile_label,Code search_prediction,Code search_label,GitHub Sponsors_prediction,GitHub Sponsors_label,Continuous integration_prediction,Continuous integration_label,Deployment_prediction,Deployment_label,Container CI_prediction,Container CI_label,Localization_prediction,Localization_label,Utilities_prediction,Utilities_label,Desktop tools_prediction,Desktop tools_label,AI Assisted_prediction,AI Assisted_label,Time tracking_prediction,Time tracking_label,Code Scanning Ready_prediction,Code Scanning Ready_label,Backup Utilities_prediction,Backup Utilities_label,Learning_prediction,Learning_label
+88,    "# Will include all .dnn files under the my-mono-repo/modules folder except if it is in a somemodule folder. See https://github.com/actions/toolkit/blob/master/packages/glob/README.md#patterns for details on supported values.","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+89,"      #-uses: actions/cache@v1   <===== YOU DO NOT NEED THIS!
+      # Install latest CMake.
+      # Or pin to a specific CMake version:
+      # lukka/get-cmake@v3.21.2
+      # Setup vcpkg: ensures vcpkg is downloaded and built.
+      # Since vcpkg.json is being used later on to install the packages
+      # when `run-cmake` runs, no packages are installed at this time 
+      # (and vcpkg does not run).
+        #with:
+          # This is the default location of the directory containing vcpkg sources.
+          # Change it to the right location if needed.
+          # vcpkgDirectory: \'${{ github.workspace }}/vcpkg\'
+          # If not using a submodule for vcpkg sources, this specifies which commit
+          # id must be checkout from a Git repo. 
+          # Note: it must not be set if using a Git submodule for vcpkg.
+          # vcpkgGitCommitId: \'${{ matrix.vcpkgCommitId }}\'
+          # This is the glob expression used to locate the vcpkg.json. 
+          # Change it to match a single manifest file you want to use.
+          # Note: do not use `${{ github.context }}` to compose the value as it
+          # contains backslashes that would be misinterpreted. Instead
+          # compose a value relative to the root of the repository using
+          # `**/path/from/root/of/repo/to/vcpkg.json` to match the desired `vcpkg.json`.
+          # vcpkgJsonGlob: \'**/vcpkg.json\'
+          # This is only needed if the command `vcpkg install` must run at this step.
+          # Instead it is highly suggested to let `run-cmake` to run vcpkg later on
+          # using the vcpkg.cmake toolchain. The default is `false`.
+          # runVcpkgInstall: true
+          # This is the default path to the CMakeLists.txt along side the
+          # CMakePresets.json. Change if you need have CMakeLists.txt and CMakePresets.json
+          # located elsewhere.
+          # cmakeListsTxtPath: \'${{ github.workspace }}/CMakeLists.txt\'
+          # This is the name of the CMakePresets.json\'s configuration to use to generate
+          # the project files. This configuration leverages the vcpkg.cmake toolchain file to
+          # run vcpkg and install all dependencies specified in vcpkg.json.
+          # This is the name of the CMakePresets.json\'s configuration to build the project.
+    #env:
+    #  By default the action disables vcpkg\'s telemetry by defining VCPKG_DISABLE_METRICS.
+    #  This behavior can be disabled by defining `VCPKG_ENABLE_METRICS` as follows.
+    #  VCPKG_ENABLE_METRICS: 1
+    #
+    #  [OPTIONAL] Define the vcpkg\'s triplet you want to enforce, otherwise the default one
+    #  for the hosting system will be automatically choosen (x64 is the default on all
+    #  platforms, e.g. `x64-osx`).
+    #  VCPKG_DEFAULT_TRIPLET: ${{ matrix.triplet }}
+","[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+90,"
+# Project A
+
+# Project B
+
+# Project C
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+91,"# Your environment configuration","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+92,"    # Optional: do not specify to match Chrome's version
+    # Optional: do not specify to match Chrome's version
+","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+93,"        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
+          # GITHUB_DOMAIN: github.myenterprise.com
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+94,"          # or
+          # api-token: ${{ secrets.CODACY_API_TOKEN }}
+          # or a comma-separated list for multiple reports
+          # coverage-reports: <PATH_TO_REPORT>, <PATH_TO_REPORT>
+","[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+95,"    # The arguments for the `git add` command (see the paragraph below for more info)
+    # Default: \'.\'
+    # The name of the user that will be displayed as the author of the commit.
+    # Default: depends on the default_author input
+    # The email of the user that will be displayed as the author of the commit.
+    # Default: depends on the default_author input
+    # Additional arguments for the git commit command. The --message argument is already set by the message input.
+    # Default: \'\'
+    # The name of the custom committer you want to use, if different from the author of the commit.
+    # Default: the name of the author (set with either author_name or default_author)
+    # The email of the custom committer you want to use, if different from the author of the commit.
+    # Default: the email of the author (set with either author_email or default_author)
+    # The local path to the directory where your repository is located. You should use actions/checkout first to set it up.
+    # Default: \'.\'
+    # Determines the way the action fills missing author name and email. Three options are available:
+    # - github_actor -> UserName <UserName@users.noreply.github.com>
+    # - user_info -> Your Display Name <your-actual@email.com>
+    # - github_actions -> github-actions <email associated with the github logo>
+    # Default: github_actor
+    # Arguments for the git fetch command. If set to false, the action won\'t fetch the repo.
+    # For more info as to why fetching is usually recommended, please see the ""Performance on large repos"" FAQ. 
+    # Default: --tags --force
+    # The message for the commit.
+    # Default: \'Commit from GitHub Actions (name of the workflow)\'
+    # If this input is set, the action will push the commit to a new branch with this name.
+    # Default: \'\'
+    # The way the action should handle pathspec errors from the add and remove commands. Three options are available:
+    # - ignore -> errors will be logged but the step won\'t fail
+    # - exitImmediately -> the action will stop right away, and the step will fail
+    # - exitAtEnd -> the action will go on, every pathspec error will be logged at the end, the step will fail.
+    # Default: ignore
+    # Arguments for the git pull command. By default, the action does not pull.
+    # Default: \'\'
+    # Whether to push the commit and, if any, its tags to the repo. It can also be used to set the git push arguments (see the paragraph below for more info)
+    # Default: true
+    # The arguments for the `git rm` command (see the paragraph below for more info)
+    # Default: \'\'
+    # Arguments for the git tag command (the tag name always needs to be the first word not preceded by an hyphen)
+    # Default: \'\'
+    # Arguments for the git push --tags command (any additional argument will be added after --tags)
+    # Default: \'\'
+      # If you need to, you can check out your repo to a different location
+      # You can make whatever type of change to the repo...
+      # ...and then use the action as you would normally do, but providing the path to the repo
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+96,"    # Optional, will publish to RubyGems if specified
+    # Optional, will publish to GitHub Packages if specified
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+97,"    # ... some other config ...
+        # ... Set-up MySQL configuration, see Usage
+    # ... some another config ...
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+98,    "# Only show last 100 lines of each","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+99,"      # Required. The name of the Docker repository to push to.
+      # Required. The username with which to authenticate with the
+      # specified Docker registry.
+      # Required. The password with which to authenticate with the
+      # specified Docker registry. It is strongly recommended that
+      # this value be considered a secret.
+      # Optional. The path to the Dockerfile relative to the root
+      # of the repository. Defaults to ""Dockerfile"".
+      # Optional. The URL of the Docker registry to which to push.
+      # Uses the Docker CLI default if unset.
+      # Optional. Whether or not to apply the `latest` tag to the
+      # built image, and push it to the registry. Defaults to false.
+      # Optional. Whether or not to apply a `snapshot` tag to the
+      # built image, and push it to the registry. Snapshot tags consist
+      # of the build date (in `YYYYMMDD-HHMMSS` format) and the short
+      # commit hash of the source material. Defaults to false.
+      # Optional. A list of additional tags to apply to the image, and
+      # push to the registry. Tags must be listed in a comma-separated
+      # fashion.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+100,"# bare minimal
+### full
+          # optional target repo
+          # optional token
+          # optional output format
+          # optional fileoutput format
+          # optional push before SHA (need both before and after)
+          # optional push after SHA (need both before and after)
+          # optional PR number to compare
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+101,"          # debug: true  # Optional, to select a Python debug build
+","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+102,"# .github/workflows/deploy.yml","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+103,"          # either \'goreleaser\' (default) or \'goreleaser-pro\'
+          # Your GoReleaser Pro key, if you are using the \'goreleaser-pro\' distribution
+          # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
+
+# format code and build javascript artifacts
+# validate all code has correctly formatted and built
+# run tests
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+104,"          # cabal-version: \'latest\'. Omitted, but defalts to \'latest\'
+          # GHC 8.8+ only works with cabal v3+
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+105,"    # The Julia version that will be installed and added as `julia` to the PATH.
+    # See ""Julia Versions"" below for a list of valid values.
+    #
+    # Warning: It is strongly recommended to wrap this value in quotes.
+    #          Otherwise, the YAML parser used by GitHub Actions parses certain
+    #          versions as numbers which causes the wrong version to be selected.
+    #          For example, `1.0` may be parsed as `1`.
+    #
+    # Default: \'1\'
+    # The architecture of the Julia binaries.
+    #
+    # Please note that installing aarch64 binaries only makes sense on self-hosted aarch64 runners.
+    # We currently don\'t run test builds on that architecture, so we cannot guarantee that the input won\'t break randomly,
+    # although there is no reason why it would.
+    #
+    # Supported values: x64 | x86 | aarch64 (untested)
+    #
+    # Note: you can use X64, X86, and ARM64 as synonyms for x64, x86, and aarch64, respectively.
+    #
+    # Defaults to the architecture of the runner executing the job.
+    # Set the display setting for printing InteractiveUtils.versioninfo() after installing.
+    #
+    # Starting Julia and running InteractiveUtils.versioninfo() takes a significant amount of time (1s or ~10% of the total build time in testing),
+    # so you may not want to run it in every build, in particular on paid runners, as this cost will add up quickly.
+    #
+    # See ""versioninfo"" below for example usage and further explanations.
+    #
+    # Supported values: true | false | never
+    #
+    # true: Always print versioninfo
+    # false: Only print versioninfo for nightly Julia
+    # never: Never print versioninfo
+    #
+    # Default: false
+  # The installed Julia version.
+  # May vary from the version input if a version range was given as input.
+  #
+  # Example output: \'1.5.3\'
+  # Path to the directory containing the Julia executable.
+  # Equivalent to JULIA_BINDIR: https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_BINDIR
+  #
+  # Example output: \'/opt/hostedtoolcache/julia/1.5.3/x64/bin\'
+        # 32-bit Julia binaries are not available on macOS
+        # Additionally create a job using 32-bit Julia 1.0.4 on windows-latest
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+106,"        # with:
+        #   annotate: true
+    # ...
+    # ...
+","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+107,"
+# comment out in distribution branches
+# node_modules/
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+108,"          # Edit the following line to reflect the actual name of the GitHub Secret containing your private key
+          # ssh: ${{ secrets.NAME_OF_MY_SSH_PRIVATE_KEY_SECRET }}
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+109,"          # Recommended if you use MacOS:
+          # github-token: ${{ secrets.GITHUB_TOKEN }}
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+110,"  # Optional: allow read access to pull request. Use with `only-new-issues` option.
+  # pull-requests: read
+          # Require: The version of golangci-lint to use.
+          # When `install-mode` is `binary` (default) the value can be v1.2 or v1.2.3 or `latest` to use the latest version.
+          # When `install-mode` is `goinstall` the value can be v1.2.3, `latest`, or the hash of a commit.
+          # Optional: working directory, useful for monorepos
+          # working-directory: somedir
+          # Optional: golangci-lint command line arguments.
+          #
+          # Note: By default, the `.golangci.yml` file should be at the root of the repository.
+          # The location of the configuration file can be changed by using `--config=`
+          # args: --timeout=30m --config=/my/path/.golangci.yml --issues-exit-code=0 
+          # Optional: show only new issues if it\'s a pull request. The default value is `false`.
+          # only-new-issues: true
+          # Optional: if set to true, then all caching functionality will be completely disabled,
+          #           takes precedence over all other caching options.
+          # skip-cache: true
+          # Optional: if set to true, then the action won\'t cache or restore ~/go/pkg.
+          # skip-pkg-cache: true
+          # Optional: if set to true, then the action won\'t cache or restore ~/.cache/go-build.
+          # skip-build-cache: true
+          # Optional: The mode to install golangci-lint. It can be \'binary\' or \'goinstall\'.
+          # install-mode: ""goinstall""
+  # Optional: allow read access to pull request. Use with `only-new-issues` option.
+  # pull-requests: read
+          # Require: The version of golangci-lint to use.
+          # When `install-mode` is `binary` (default) the value can be v1.2 or v1.2.3 or `latest` to use the latest version.
+          # When `install-mode` is `goinstall` the value can be v1.2.3, `latest`, or the hash of a commit.
+          # Optional: working directory, useful for monorepos
+          # working-directory: somedir
+          # Optional: golangci-lint command line arguments.
+          # 
+          # Note: by default the `.golangci.yml` file should be at the root of the repository.
+          # The location of the configuration file can be changed by using `--config=`
+          # args: --timeout=30m --config=/my/path/.golangci.yml --issues-exit-code=0
+          # Optional: show only new issues if it\'s a pull request. The default value is `false`.
+          # only-new-issues: true
+          # Optional:The mode to install golangci-lint. It can be \'binary\' or \'goinstall\'.
+          # install-mode: ""goinstall""
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+111,"# .github/workflows/deploy.yml","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+112,"#!/bin/bash","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+113,"
+# ~/.craft.env
+
+## 1.3.5
+## 1.3.4
+
+## Unreleased
+## 1.3.4
+# Optional but strongly recommended
+
+#!/bin/bash
+### Example of a version-bumping script for an NPM project.
+### Located at: ./scripts/bump-version.sh
+# Do not tag and commit changes made by ""npm version""
+
+#!/bin/bash
+### Example of a dev-version-bumping script for a Python project
+### Located at: ./scripts/post-release.sh
+# Ensure master branch
+# Advance the CalVer release by one-month and add the `.dev0` suffix
+# Only commit if there are changes, make sure to `pull --rebase` before pushing to avoid conflicts
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+114,"          # A PR will be sent to github.com/Homebrew/homebrew-core to update this formula:
+          # the personal access token should have ""repo"" & ""workflow"" scopes
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # ...
+  # ...
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+115,"                                # for semantic-release when using
+                                # semantic-release-action lower than @v3
+      # you can set branches for semantic-release above v16.
+      # you can set branch for semantic-release older than v16.
+      # You can specify specifying version range for the extra plugins if you prefer.
+      # You can extend an existing shareable configuration.
+      # And you can specify version range for the shareable configuration if you prefer.
+      # You can select another working directory like a subdirectory for example.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+116,"# .github/workflows/test.yml","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+117,"  # Option 1: using \'latest\' branch, the most recent CMake and ninja are installed.
+
+    # Suited for self-hosted GH runners where the local cache wins over the cloud.
+
+  # Option 2: specify \'latest\' or \'latestrc\' in the input version arguments:
+
+  # Option 1: specify in a input parameter the desired version using ranges.
+  # or using a specific version (no range)
+
+  # Option 2: or you can use the Git \'tag\' to select the version, and you can have a one-liner statement,
+  # but note that you can only use one of the existing tags, create a PR to add the tag you need!
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+118,"      #-uses: actions/cache@v3   <===== YOU DO NOT NEED THIS!
+      # Install latest CMake and Ninja.
+      # Or pin to a specific CMake version:
+      # lukka/get-cmake@v3.21.2
+      # Restore from cache the previously built ports. If a ""cache miss"" occurs,
+      # then vcpkg is bootstrapped. Since a the vcpkg.json is being used later on
+      # to install the packages when `run-cmake` runs, no packages are installed at
+      # this time.
+                                  # action you need, `v10` in this case to stay up
+                                  # to date with fixes on the v10 branch.
+        #with:
+          # This is the default location of the directory containing vcpkg sources.
+          # Change it to the right location if needed.
+          # vcpkgDirectory: \'${{ github.workspace }}/vcpkg\'
+          # If not using a submodule for vcpkg sources, this specifies which commit
+          # id must be checkout from a Git repo. It must not set if using a submodule
+          # for vcpkg.
+          # vcpkgGitCommitId: \'${{ matrix.vcpkgCommitId }}\'
+          # This is the glob expression used to locate the vpkg.json and add its
+          # hash to the cache key. Change it to match a single manifest file you want
+          # to use.
+          # vcpkgJsonGlob: \'**/vcpkg.json\'
+          # This is needed to run `vcpkg install` command (after vcpkg is built) in
+          # the directory where vcpkg.json has been located. Default is false,
+          # It is highly suggested to let `run-cmake` to run vcpkg (i.e. `false`)
+          # (i.e. let CMake run `vcpkg install`) using the vcpkg.cmake toolchain.
+          # runVcpkgInstall: true
+          # This is the default path to the CMakeLists.txt along side the
+          # CMakePresets.json. Change if you need have CMakeLists.txt and CMakePresets.json
+          # located elsewhere.
+          # cmakeListsTxtPath: \'${{ github.workspace }}/CMakeLists.txt\'
+          # You could use CMake workflow presets defined in the CMakePresets.json 
+          # with just this line below. Note this one cannot be used with any other 
+          # preset input, it is mutually exclusive.
+          # workflowPreset: \'workflow-name\'
+          # This is the name of the CMakePresets.json\'s configuration to use to generate
+          # the project files. This configuration leverages the vcpkg.cmake toolchain file to
+          # run vcpkg and install all dependencies specified in vcpkg.json.
+          # Additional arguments can be appended to the cmake command.
+          # This is useful to reduce the number of CMake\'s Presets since you can reuse
+          # an existing preset with different variables.
+          # This is the name of the CMakePresets.json\'s configuration to build the project.
+          # Additional arguments can be appended when building, for example to specify the
+          # configuration to build.
+          # This is useful to reduce the number of CMake\'s Presets you need in CMakePresets.json.
+          # This is the name of the CMakePresets.json\'s configuration to test the project with.
+          # Additional arguments can be appended when testing, for example to specify the config
+          # to test.
+          # This is useful to reduce the number of CMake\'s Presets you need in CMakePresets.json.
+    #env:
+    #  VCPKG_DEFAULT_TRIPLET: ${{ matrix.triplet }} # [OPTIONAL] Define the vcpkg\'s triplet 
+    # you want to enforce, otherwise the default one for the hosting system will be 
+    # automatically choosen (x64 is the default on all platforms,  e.g. x64-osx).
+","[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+119,"# Inputs/Outputs
+# Exporting variables
+# Setting a secret
+# PATH Manipulation
+# Exit codes
+# Logging
+  # print verbose log
+# Annotation
+# Manually wrap output
+# Summary
+# Wrap Subroutines
+# Custom Functions of actions-setup-perl
+# List Available Perl Versions
+      # do something
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+120,"        # test against latest update of each major Java version, as well as specific updates of LTS versions:
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+121,    "# Sequence of patterns matched against refs/tags","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+122,"    # Make sure to set a version number!
+    # This is the name of the cache folder.
+    # The cache folder will be placed in the build directory,
+    #  so make sure it doesn\'t conflict with anything!
+","[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+123,"# Build repository using CMake
+      # These are optional (defaults displayed)
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+124,"# Run clang-format
+      # These are optional (defaults displayed)
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+125,"# Run clang-tidy
+      # These are optional (defaults displayed)
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+126,"# Run unit tests using CTest
+      # These are optional (defaults displayed)
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+127, "# ...","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+128,"# CA
+# Ticket
+# Master
+# Agent
+#pushd icinga2
+#git checkout v2.12.0
+#popd
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+129,"#pushd icingaweb2
+#git checkout v2.9.0
+#popd
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+130,"      # ...
+#  cancel-in-progress: true
+      # ...
+  # push:
+  # ...
+        # Use this GitHub Actions at least once in this workflow as soon as possible.
+        # Run any steps
+      # ...
+  # Run any jobs
+  # ...
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+131,"  # Required:
+  # Optional
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+132,"      # - name: Setup dotnet\r
+      #   uses: actions/setup-dotnet@v1\r
+      #   with:\r
+      #     dotnet-version: 3.1.200\r
+      # Publish\r
+          # Filepath of the project to be packaged, relative to root of repository\r
+          # Configuration to build and package\r
+          # BUILD_CONFIGURATION: Release\r
+          # Platform target to compile (default is empty/AnyCPU)\r
+          # BUILD_PLATFORM: x64\r
+          # NuGet package id, used for version detection & defaults to project name\r
+          # PACKAGE_NAME: Core\r
+          # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH\r
+          # VERSION_FILE_PATH: Directory.Build.props\r
+          # Regex pattern to extract version info in a capturing group\r
+          # VERSION_REGEX: ^\\s*<Version>(.*)<\\/Version>\\s*$\r
+          # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX\r
+          # VERSION_STATIC: 1.0.0\r
+          # Flag to toggle git tagging, enabled by default\r
+          # TAG_COMMIT: true\r
+          # Format of the git tag, [*] gets replaced with actual version\r
+          # TAG_FORMAT: v*\r
+          # API key to authenticate with NuGet server\r
+          # NUGET_KEY: ${{secrets.NUGET_API_KEY}}\r
+          # NuGet server uri hosting the packages, defaults to https://api.nuget.org\r
+          # NUGET_SOURCE: https://api.nuget.org\r
+          # Flag to toggle pushing symbols along with nuget package to the server, disabled by default\r
+          # INCLUDE_SYMBOLS: false\r
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+133,    "# ... then your own project steps ...","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+134,"    # branches to consider in the event; optional, defaults to all
+      # Drafts your next Release notes as Pull Requests are merged into ""master""
+  ## What\xe2\x80\x99s Changed
+  ## Changes
+
+# Install dependencies
+# Run the tests
+# Run the app locally
+
+# Run the tests
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+135,"      # Collect the SDKs we need by parsing global.json
+      # Supplementary sdks are stored in an ""others"" array.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+136,"      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+    # Cypress Docker image with Chrome v106
+    # and Firefox v106 pre-installed
+          # pass the Cypress Cloud record key as an environment variable
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          # pass the Cypress Cloud record key as an environment variable
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          # pass the project ID from the secrets through environment variable
+    # let\'s make sure our ""app"" works on several versions of Node
+          # Cancel the run after 2 failed tests
+      # after the test run completes store videos and any screenshots
+        # add the line below to store screenshots only on failures
+        # if: failure()
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests with `quiet` parameter
+      # when one test fails, DO NOT cancel the other
+      # containers, because this will kill Cypress processes
+      # leaving Cypress Cloud hanging ...
+      # https://github.com/cypress-io/github-action/issues/48
+        # run 3 copies of the current job in parallel
+      # because of ""record"" and ""parallel"" parameters
+      # these containers will load balance all found tests among themselves
+          # pass the Cypress Cloud record key as an environment variable
+          # Recommended: pass the GitHub token lets this action correctly
+          # determine the unique run id necessary to re-run the checks
+    # we have already installed everything
+          # Linux and MacOS
+          # Takes precedences on Windows
+          # quote the url to be safe against YML parsing surprises
+    # wait for 2 minutes for the server to respond
+    # API runs on port 3050
+    # Web server runs on port 8080
+    # wait for all services to respond
+          # quote the url to be safe against YML parsing surprises
+          # the entire command will automatically be prefixed with ""npm""
+          # and we need the second ""npm"" to execute ""cypress run ..."" command line
+        # run 3 copies of the current job in parallel
+          # pass the Cypress Cloud record key as an environment variable
+  # single job that generates and outputs a common id
+        # take the current commit + timestamp together
+        # the typical value would be something like
+        # ""sha-5d3fe...35d3-time-1620841214""
+          # pass the Cypress Cloud record key as an environment variable
+      # Cypress has its own package.json in folder ""e2e""
+    # the example has Yarn workspace in its ""root"" folder
+    # examples/start-and-yarn-workspaces
+    # and tests in a subfolder like ""workspace-1""
+    # let\'s make sure our ""app"" works on several versions of Node
+      # run Cypress tests and record them under the same run
+      # associated with commit SHA and just give a different group name
+          # just perform install
+          # we have already installed all dependencies above
+          # Cypress tests and config file are in ""e2e"" folder
+    # stop the job if it runs over 10 minutes
+    # to prevent a hanging process from using all your CI minutes
+        # you can specify individual step timeout too
+  # let\'s give this action an ID so we can refer
+  # to its output values later
+  # Continue the build in case of an error, as we need to set the
+  # commit status in the next step, both in case of success or failure
+          # just perform install
+          # we have already installed all dependencies above
+          # rest of your parameters
+    # runs tests every day at 4am
+","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+137,          "# ninja version to download. Default: 1.10.0","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+138,"      # Make changes in the source code using `update-changlog`.
+      # Send changes as pull request using `create-pull-request`.
+
+# Get token at https://github.com/settings/tokens/new
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+139,"#ifndef SOME_NAME
+#define SOME_NAME
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+140,          "#slack-optional-reply_broadcast: true # To broadcast thread reply in channel","[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+141,"        # The above command will fail if no changes were present, so we ignore
+        # the return code.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+142,        "# do something with the snap","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+143,        "# do something with the snap","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+144,"    # Use a newer `bundle` command.
+
+# In your repository\'s `.github/workflows/publish-to-github-pages.yaml` file.
+# Name of your GitHub Actions workflow.
+# Specifies to run this workflow whenever a push is made (commits are
+# added) to the branch named `jekyll`.
+      # Change this to the branch where you keep your Jekyll code.
+# Define a job named `build-and-publish` in your workflow.
+      # Checkout the source from the `jekyll` branch.
+      # Invoke this action against the newly checked out source code.
+          # Provide this action with your repository\'s `GH_PAGES_TOKEN`
+          # ""Secret"" variable. This should be the value of a personal
+          # access token granted, at a minimum, the `public_repo` and
+          # the `repo_deployment` scopes needed to deploy to GH Pages.
+  # Automatically execute this workflow on a schedule.
+    # POSIX-compatible cron syntax is supported.
+  # Also run this workflow whenever pushes are made to these branches, as before.
+      # Change this to the branch where you keep your Jekyll code.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+145,"  # Can be a single package version id, or a comma separated list of package version ids.
+  # Defaults to an empty string.
+  # Owner of the package.
+  # Defaults to the owner of the repo executing the workflow.
+  # Required if deleting a version from a package hosted in a different org than the one executing the workflow.
+  # Name of the package.
+  # Required
+  # Type of the package. Can be one of container, maven, npm, nuget, or rubygems.
+  # Required
+  # The number of old versions to delete starting from the oldest version.
+  # Defaults to 1.
+  # The number of latest versions to keep.
+  # This cannot be specified with `num-old-versions-to-delete`. By default, `min-versions-to-keep` takes precedence over `num-old-versions-to-delete`.
+  # When set to 0, all deletable versions will be deleted.
+  # When set greater than 0, all deletable package versions except the specified number will be deleted.
+  # The package versions to exclude from deletion.
+  # Takes regex for the version name as input.
+  # By default nothing is ignored. This is ignored when `delete-only-pre-release-versions` is true
+  # If true it will delete only the pre-release versions.
+  # The number of pre-release versions to keep can be set by using `min-versions-to-keep` value with this.
+  # When `min-versions-to-keep` is 0, all pre-release versions get deleted.
+  # Defaults to false.
+  # Cannot be used with `num-old-versions-to-delete` and `ignore-versions`.
+  # If true it will delete only the untagged versions in case of container package.
+  # Does not work for other package types and will be ignored.
+  # The number of untagged versions to keep can be set by using `min-versions-to-keep` value with this.
+  # When `min-versions-to-keep` is 0, all untagged versions get deleted.
+  # Defaults to false.
+  # Cannot be used with `num-old-versions-to-delete`.
+  # The token used to authenticate with GitHub Packages.
+  # Defaults to github.token.
+  # Required if the repo running the workflow does not have access to delete the package.
+  #   For rubygems and maven package, repo has access if package is hosted in the same repo as the workflow.
+  #   For container, npm and nuget package, repo has access if assigned **Admin** role under Package Settings > Manage Actions Access.
+  #   If `package-version-ids` is given the token only needs the delete packages scope.
+  #   If `package-version-ids` is not given the token needs the delete packages scope and the read packages scope
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+146,"    # clone more dependencies into the workspace, e.g.
+    # ...
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+147,"# Example","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+148,    "#     dotnet-version: '6.0.x'","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+149,"# or specify a path!
+# or specify additional mypy flags!
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+150,"
+# Single line
+
+# Multi line
+","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+151,    "# https://crontab.guru/every-night-at-midnight","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+152,   "# delete-artifact","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+153,"      # List all required workflow names here.
+        # succeeds. This can be changed as needed.
+          # Depending on branch protection rules, a  manually populated
+          # `GITHUB_TOKEN_WORKAROUND` secret with permissions to push to
+          # a protected branch must be used. This secret can have an arbitrary
+          # name, as an example, this repository uses `DOTTBOTT_TOKEN`.
+          #
+          # When using a custom token, it is recommended to leave the following
+          # comment for other developers to be aware of the reasoning behind it:
+          #
+          # This must be used as GitHub Actions token does not support pushing
+          # to protected branches.
+  # Trigger on Pull Requests against the master branch.
+  # Trigger on Pull Requests to the master branch.
+  # Add other CI jobs, such as testing and linting. The example test job
+  # showcases checkout settings which support `pull_request_target` and `push`
+  # triggers at the same time.
+          # This adds support for both `pull_request_target` and `push` events.
+        # Depending on the setup, it might be required to use a personal access
+        # token instead.
+      # List all required job names here.
+          # Depending on branch protection rules, a  manually populated
+          # `GITHUB_TOKEN_WORKAROUND` secret with permissions to push to
+          # a protected branch must be used. This secret can have an arbitrary
+          # name, as an example, this repository uses `DOTTBOTT_TOKEN`.
+          #
+          # When using a custom token, it is recommended to leave the following
+          # comment for other developers to be aware of the reasoning behind it:
+          #
+          # This must be used as GitHub Actions token does not support pushing
+          # to protected branches.
+","[1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+154,"# main.yml
+
+# main.yml
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+155,"# Install some package","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+156,"# File: .github/workflows/repo-sync.yml","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+157,"        # Check only if there are differences in the source code
+        # Check only source files with differences
+        # Check only if there are differences in the source code (Run a lint on all files if there are changes to yarn.lock or .eslintrc)
+      # ...
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+158,"  # Reference a docker image from GitHub Container Registry (recommended for speed & security)
+  # Reference the major version of a release
+  # Reference a specific commit
+  # Reference a minor version of a release
+  # Reference a branch
+  # Reference a docker image from GitHub Container Registry
+  # Reference a docker image from Dockerhub
+  # Reference a docker image from GitHub Container Registry (example for v2.0.0)
+      # specify default branches to add support for the `main` branch
+      # which semantic-release doesn\'t have as a default yet.
+  # you\'ll need to add an `id` in order to access output variables
+  # you\'ll need to add an `id` in order to access output variables
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+159,"      # Do something here, pre-stage.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+160,"      # ...
+      # ...
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+161,"# Your environment configuration","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+162,"      #### Terraform Initialization \xe2\x9a\x99\xef\xb8\x8f\\`${{ steps.init.outcome }}\\`
+      #### Terraform Validation \xf0\x9f\xa4\x96\\`${{ steps.validate.outcome }}\\`
+      #### Terraform Plan \xf0\x9f\x93\x96\\`${{ steps.plan.outcome }}\\`
+      #### Terraform Initialization \xe2\x9a\x99\xef\xb8\x8f\\`${{ steps.init.outcome }}\\`
+      #### Terraform Validation \xf0\x9f\xa4\x96\\`${{ steps.validate.outcome }}\\`
+      #### Terraform Plan \xf0\x9f\x93\x96\\`${{ steps.plan.outcome }}\\`
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+163,"    # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    # Standard usage
+    # Example deployment: Push to S3
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+164,"# Automatically replace with the following markdown =>","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+165,"# This isn\'t actually a Linux kernel tree","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+166,"
+# labels to be used with /area command
+# File globs for PR labeler
+          # this is optional and defaults to \'merge\'
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+167,"  # ... your test step here
+    # Updates existing message from the first step
+  # ... your test step here
+","[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+168,"# .github/workflows/pullpreview.yml
+  # the schedule is optional, but helps to make sure no dangling resources are left when GitHub Action does not behave properly
+          # Those GitHub users will have SSH access to the servers
+          # A staging environment will always exist for the master branch
+          # Use the cidrs option to restrict access to the live environments to specific IP ranges
+          # PullPreview will use those 2 files when running docker-compose up
+          # The preview URL will target this port
+          # Use a 512MB RAM instance type instead of the default 2GB
+          # Ports to open on the server
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+169,"          # will set the CC & CXX for cmake
+          # Extra options pass to cmake while configuring project
+          # install the build using cmake --install
+          # run build using '-j [parallel]' to use multiple threads to build
+","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+170,"      # Export NEW_VAR_NAME variable for subsequent steps, and export all environment variables matching the optional regexp.
+    # with:
+    #   shell: 'bash' or 'tcsh' or any command that starts a shell.
+    #   args: '-c env' or any arguments that list the environment variables as NAME=VALUE pairs.
+    #   filter: an optional reg exp to export matching variables out of the desired shell.
+    #   YOUR_VARIABLE_NAME: provide value for any new variable you name. Note the name will always be converted to be all uppercase.
+    #  Here onward any following step can access the environment variable using:
+    #  in your yml file:
+    #     ${{ env.YOUR_VARIABLE_NAME }}
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+171,      "# You can now run Snapcraft shell commands","[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+172,    "# ... then your own project steps ...","[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+173,"          # A GitHub token is not necessary when BUILD_ONLY is true
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+174,"# File: .github/workflows/workflow.yml
+
+# File: .github/workflows/workflow.yml
+
+# File: .github/workflows/OIDC_workflow.yml
+
+# File: .github/workflows/OIDC_workflow.yml
+
+# File: .github/workflows/workflow.yml
+
+# File: .github/workflows/workflow.yml
+
+# File: .github/workflows/workflow.yml
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)

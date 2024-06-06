@@ -1,0 +1,855 @@
+,text,label,Dependency management_prediction,Dependency management_label,Support_prediction,Support_label,Testing_prediction,Testing_label,Reporting_prediction,Reporting_label,Mobile CI_prediction,Mobile CI_label,Community_prediction,Community_label,Security_prediction,Security_label,Chat_prediction,Chat_label,IDEs_prediction,IDEs_label,Monitoring_prediction,Monitoring_label,Code review_prediction,Code review_label,Code quality_prediction,Code quality_label,Publishing_prediction,Publishing_label,Project management_prediction,Project management_label,API management_prediction,API management_label,Open Source management_prediction,Open Source management_label,Mobile_prediction,Mobile_label,Code search_prediction,Code search_label,GitHub Sponsors_prediction,GitHub Sponsors_label,Continuous integration_prediction,Continuous integration_label,Deployment_prediction,Deployment_label,Container CI_prediction,Container CI_label,Localization_prediction,Localization_label,Utilities_prediction,Utilities_label,Desktop tools_prediction,Desktop tools_label,AI Assisted_prediction,AI Assisted_label,Time tracking_prediction,Time tracking_label,Code Scanning Ready_prediction,Code Scanning Ready_label,Backup Utilities_prediction,Backup Utilities_label,Learning_prediction,Learning_label
+0,"    # Repository name with owner. For example, actions/checkout
+    # Default: ${{ github.repository }}
+    # The branch, tag or SHA to checkout. When checking out the repository that
+    # triggered a workflow, this defaults to the reference or SHA for that event.
+    # Otherwise, uses the default branch.
+    # Personal access token (PAT) used to fetch the repository. The PAT is configured
+    # with the local git config, which enables your scripts to run authenticated git
+    # commands. The post-job step removes the PAT.
+    #
+    # We recommend using a service account with the least permissions necessary. Also
+    # when generating a new PAT, select the least scopes necessary.
+    #
+    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    #
+    # Default: ${{ github.token }}
+    # SSH key used to fetch the repository. The SSH key is configured with the local
+    # git config, which enables your scripts to run authenticated git commands. The
+    # post-job step removes the SSH key.
+    #
+    # We recommend using a service account with the least permissions necessary.
+    #
+    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    # Known hosts in addition to the user and global host key database. The public SSH
+    # keys for a host may be obtained using the utility `ssh-keyscan`. For example,
+    # `ssh-keyscan github.com`. The public key for github.com is always implicitly
+    # added.
+    # Whether to perform strict host key checking. When true, adds the options
+    # `StrictHostKeyChecking=yes` and `CheckHostIP=no` to the SSH command line. Use
+    # the input `ssh-known-hosts` to configure additional hosts.
+    # Default: true
+    # Whether to configure the token or SSH key with the local git config
+    # Default: true
+    # Relative path under $GITHUB_WORKSPACE to place the repository
+    # Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching
+    # Default: true
+    # Do a sparse checkout on given patterns. Each pattern should be separated with
+    # new lines
+    # Default: null
+    # Specifies whether to use cone-mode when doing a sparse checkout.
+    # Default: true
+    # Number of commits to fetch. 0 indicates all history for all branches and tags.
+    # Default: 1
+    # Whether to download Git-LFS files
+    # Default: false
+    # Whether to checkout submodules: `true` to checkout submodules or `recursive` to
+    # recursively checkout submodules.
+    #
+    # When the `ssh-key` input is not provided, SSH URLs beginning with
+    # `git@github.com:` are converted to HTTPS.
+    #
+    # Default: false
+    # Add repository path as safe.directory for Git global config by running `git
+    # config --global --add safe.directory <path>`
+    # Default: true
+    # The base URL for the GitHub instance that you are trying to clone from, will use
+    # environment defaults to fetch from the same instance that the workflow is
+    # running from unless specified. Example URLs are https://github.com or
+    # https://my-ghes-server.example.com
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+1,"    # Prime the caches every Monday
+  #                      ^^^
+  # Reference the major version of a release (most recommended)
+  # Reference a specific commit (most strict)
+  # Reference a semver version of a release (not recommended)
+  # Reference a branch (most dangerous - do not do this)
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+2,"        # If you\'re changing the branch from main,
+        # also change the `main` in `refs/heads/main`
+        # below accordingly.
+    # personal_token: ${{ secrets.PERSONAL_TOKEN }} # An alternative
+    # github_token: ${{ secrets.GITHUB_TOKEN }}     # This does not work for this usage
+
+# .github/workflows/deploy.yml
+          # install pip=>20.1 to use ""pip cache dir""
+          # mdbook-version: \'latest\'
+        # If you have non-minimal setup with some assets and separate html/js files,
+        # provide --output=<output-file> option for `elm make` and remove this step
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+3,"##[error]Docker run failed with exit code 1","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+4,"# Make changes to pull request here","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+5," # http://man7.org/linux/man-pages/man1/date.1.html","[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+6,"# Directories # Files","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+7,"# Only write to the cache for builds on the \'main\' and \'release\' branches. (Default is \'main\' only.)# Builds on other branches will only read existing entries from the cache.# Cache downloaded JDKs in addition to the default directories.# Exclude the local build-cache and keyrings from the directories cached.
+
+# .github/workflows/gradle-build-pr.yml
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+8,"        # Due to https://github.com/actions/runner/issues/849, we have to use quotes for \'3.0\'
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+9,"
+# For runs-on: ubuntu-latest
+# For runs-on: ubuntu-22.04
+# For runs-on: ubuntu-20.04
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+10,   " # Sequence of patterns matched against refs/tags","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+11,"      # - name: Setup dotnet\r
+      #   uses: actions/setup-dotnet@v1\r
+      #   with:\r
+      #     dotnet-version: 3.1.200\r
+      # Publish\r
+          # Filepath of the project to be packaged, relative to root of repository\r
+          # Configuration to build and package\r
+          # BUILD_CONFIGURATION: Release\r
+          # Platform target to compile (default is empty/AnyCPU)\r
+          # BUILD_PLATFORM: x64\r
+          # NuGet package id, used for version detection & defaults to project name\r
+          # PACKAGE_NAME: Core\r
+          # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH\r
+          # VERSION_FILE_PATH: Directory.Build.props\r
+          # Regex pattern to extract version info in a capturing group\r
+          # VERSION_REGEX: ^\\s*<Version>(.*)<\\/Version>\\s*$\r
+          # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX\r
+          # VERSION_STATIC: 1.0.0\r
+          # Flag to toggle git tagging, enabled by default\r
+          # TAG_COMMIT: true\r
+          # Format of the git tag, [*] gets replaced with actual version\r
+          # TAG_FORMAT: v*\r
+          # API key to authenticate with NuGet server\r
+          # NUGET_KEY: ${{secrets.NUGET_API_KEY}}\r
+          # NuGet server uri hosting the packages, defaults to https://api.nuget.org\r
+          # NUGET_SOURCE: https://api.nuget.org\r
+          # Flag to toggle pushing symbols along with nuget package to the server, disabled by default\r
+          # INCLUDE_SYMBOLS: false\r
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+12,"          # Increase this value to reset cache if etc/example-environment.yml has not changed
+    # Increase this value to reset cache if etc/example-environment.yml has not changed
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+13,"# .github/workflows/ci-cd.yml
+    # retrieve your distributions here
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+14,"      # Run the commitlint action, considering its own dependencies and yours as well \xf0\x9f\x9a\x80
+      # `github.workspace` is the path to your repository.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+15,"
+# Enable all rules by default
+# Extend line length, since each sentence should be on a separate line.
+# Allow in-line HTML
+# Nested lists should be indented with four spaces.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+16,"  # Run everyday at 9:00 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
+## Section
+    # check out the latest version of the code
+    # Checks the status of hyperlinks in .md files in verbose mode
+","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+17,"    # Version Spec of the version to use in SemVer notation.
+    # It also emits such aliases as lts, latest, nightly and canary builds
+    # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
+    # File containing the version Spec of the version to use.  Examples: .nvmrc, .node-version, .tool-versions.
+    # If node-version and node-version-file are both provided the action will use version from node-version. 
+    # Set this option if you want the action to check for the latest available version 
+    # that satisfies the version spec.
+    # It will only get affect for lts Nodejs versions (12.x, >=10.15.0, lts/Hydrogen). 
+    # Default: false
+    # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
+    # Default: \'\'. The action use system architecture by default 
+    # Used to pull node distributions from https://github.com/actions/node-versions. 
+    # Since there\'s a default, this is typically not supplied by the user. 
+    # When running this action on github.com, the default value is sufficient. 
+    # When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
+    #
+    # We recommend using a service account with the least permissions necessary. Also
+    # when generating a new PAT, select the least scopes necessary.
+    #
+    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    #
+    # Default: ${{ github.server_url == \'https://github.com\' && github.token || \'\' }}
+    # Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm.
+    # Package manager should be pre-installed
+    # Default: \'\'
+    # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. 
+    # It will generate hash from the target file for primary key. It works only If cache is specified.  
+    # Supports wildcards or a list of file names for caching multiple dependencies.
+    # Default: \'\'
+    # Optional registry to set up for auth. Will set the registry in a project level .npmrc and .yarnrc file, 
+    # and set up auth to read in from env.NODE_AUTH_TOKEN.
+    # Default: \'\'
+    # Optional scope for authenticating against scoped registries. 
+    # Will fall back to the repository owner when using the GitHub Packages registry (https://npm.pkg.github.com/).
+    # Default: \'\'
+    # Set always-auth option in npmrc file.
+    # Default: \'\'
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+18,"          # extended: true
+    # image: peaceiris/hugo:v${HUGO_VERSION}-mod   # Hugo Modules
+    # image: peaceiris/hugo:v${HUGO_VERSION}-full  # Hugo Modules and Node.js
+          # The action defaults to search for the dependency file (package-lock.json,
+          # npm-shrinkwrap.json or yarn.lock) in the repository root, and uses its
+          # hash as a part of the cache key.
+          # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
+
+# On container
+# Release script on host
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+19,"          # You can opt for \'only-labels\' instead if your use-case requires all labels
+          # to be present in the issue/PR
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+20,"# Fails with ""Error: Variable $itemId of type String! was provided invalid value""
+
+# The variable name must be lower-case:
+# Both: in the query and action var declaration:
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+21,"      # Set CC_TEST_REPORTER_ID as secret of your repo
+      # The report file must be there, otherwise Code Climate won\'t find it
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+22,"    # branches to consider in the event; optional, defaults to all
+  # pull_request event is required only for autolabeler
+    # Only following types are handled by the action, but one can default to all as well
+  # pull_request_target event is required for autolabeler to support PRs from forks
+  # pull_request_target:
+  #   types: [opened, reopened, synchronize]
+      # write permission is required to create a github release
+      # write permission is required for autolabeler
+      # otherwise, read permission is required at least
+      # (Optional) GitHub Enterprise requires GHE_HOST variable set
+      #- name: Set GHE_HOST
+      #  run: |
+      #    echo ""GHE_HOST=${GITHUB_SERVER_URL##https:\\/\\/}"" >> $GITHUB_ENV
+      # Drafts your next Release notes as Pull Requests are merged into ""master""
+        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
+        # with:
+        #   config-name: my-config.yml
+        #   disable-autolabeler: true
+  ## What\xe2\x80\x99s Changed
+  ## Changes
+
+# Install dependencies
+# Run the tests
+# Run the app locally
+
+# Run the tests
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(1),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+23,"    # Optional. Specifies which part of the version to auto-increment.
+    # Optional. Sets custom build metadata for your semantic version.
+    # Optional. Specifies the default pre-release phase.
+    # Optional. Specifies the minimum version to use when no tags exist.
+    # Optional. Specifies the prefix of the tags
+    # Optional. Specifies the log level.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+24,    "# Sequence of patterns matched against refs/tags","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+25,"    # Optional, GitHub token, a Personal Access Token with `public_repo` scope if needed
+    # Required, if the artifact is from a different repo
+    # Required, if the repo is private a Personal Access Token with `repo` scope is needed or GitHub token in a job where the permissions `action` scope set to `read`
+    # Optional, workflow file name or ID
+    # If not specified, will be inferred from run_id (if run_id is specified), or will be the current workflow
+    # Optional, the status or conclusion of a completed workflow to search for
+    # Can be one of a workflow conclusion:
+    #   ""failure"", ""success"", ""neutral"", ""cancelled"", ""skipped"", ""timed_out"", ""action_required""
+    # Or a workflow status:
+    #   ""completed"", ""in_progress"", ""queued""
+    # Use the empty string ("""") to ignore status or conclusion in the search
+    # Optional, will get head commit SHA
+    # Optional, no need to specify if PR is
+    # Optional, will use the specified branch. Defaults to all branches
+    # Optional, defaults to all types
+    # Optional, will use specified workflow run
+    # use ${{ github.event.workflow_run.id }} when your action runs in a workflow_run event
+    # and wants to download from the triggering workflow run
+    # Optional, run number from the workflow
+    # Optional, uploaded artifact name,
+    # will download all artifacts if not specified
+    # and extract them into respective subdirectories
+    # https://github.com/actions/download-artifact#download-all-artifacts
+    # is treated as a regular expression if input name_is_regexp is true
+    # will download only those artifacts with a name that matches this regular expression
+    # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
+    # Optional, name is treated as a regular expression if set true
+    # Optional, a directory where to extract artifact(s), defaults to the current directory
+    # Optional, defaults to current repo
+    # Optional, check the workflow run to whether it has an artifact
+    # then will get the last available artifact from the previous workflow
+    # default false, just try to download from the last one
+    # Optional, search for the last workflow run whose stored an artifact named as in `name` input
+    # default false
+    # Optional, choose to skip unpacking the downloaded artifact(s)
+    # default false
+    # Optional, choose how to exit the action if no artifact is found
+    # can be one of:
+    #  ""fail"", ""warn"", ""ignore""
+    # default fail
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+26,      "# or one-off:","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+27,"  # Extra environment variables for Gradle execution (regular GitHub Actions feature)
+  # Note: env must be outside of ""with""
+    # If you have multiple jobs, use distinct job-id in in case you want to split caches
+    # For instance, jobs with different JDK versions can\'t share caches
+    # RUNNER_OS is added to job-id automatically
+    # Specifies arguments for Gradle execution
+    # If arguments is missing or empty, then Gradle is not executed
+    # arguments can be multi-line for better readability
+    # arguments: |
+    #  --no-paralell
+    #  build
+    #  -x test
+    # Gradle version to use for execution:
+    #   wrapper (default), current, rc, nightly, release-nightly, or
+    #   versions like 6.6 (see https://services.gradle.org/versions/all)
+    # Properties are passed as -Pname=value
+  # Extra environment variables for Gradle execution (regular GitHub Actions feature)
+    # If you have multiple jobs, use distinct job-id in in case you want to split caches
+    # For instance, jobs with different JDK versions can\'t share caches
+    # RUNNER_OS is added to job-id automatically
+    # Overrides $HOME
+    # home-directory: /home/user
+    # Disable caching of $HOME/.gradle/caches/*.*/generated-gradle-jars
+    # Disable remote cache that proxies requests to GitHub Actions cache
+    # Set the cache key for Gradle version (e.g. in case multiple jobs use different versions)
+    # By default the value is `wrapper`, so the version is determined from the gradle-wrapper.properties   
+    # Note: this argument specifies the version for Gradle execution (if `arguments` is present)
+    # Supported values:
+    #   wrapper (default), current, rc, nightly, release-nightly, or
+    #   versions like 6.6 (see https://services.gradle.org/versions/all)
+    # Makes all non-main branch builds to use read-only caching
+    # Arguments for Gradle execution
+    # Properties are passed as -Pname=value
+    # Relative path under $GITHUB_WORKSPACE where Git repository is placed
+    # Activates only the caches that are relevant for executing gradle command.
+    # This is helpful when build job executes multiple gradle commands sequentially.
+    # Then the caching is implemented in the very first one, and the subsequent should be marked
+    # with execution-only-caches: true
+    # Disable caching of ~/.gradle/caches/build-cache-*
+    # Disable caching of ~/.gradle/caches/modules-*
+    # Extra files to take into account for ~/.gradle/caches dependencies
+    # Disable caching of ~/.m2/repository/
+    # Ignore some of the paths when caching Maven Local repository
+    # Enable concurrent cache save and restore
+    # Default is concurrent=false for better log readability
+    # Disable publishing Gradle Build Scan URL to job report
+    # Disable warning about missing distributionSha256Sum property in gradle-wrapper.properties
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+28,"    # Permissions block is optional, useful for dependabot checks
+","[0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(1),0,tensor(0),1,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+29,"    # branches to consider in the event; optional, defaults to all
+  # pull_request event is required only for autolabeler
+    # Only following types are handled by the action, but one can default to all as well
+  # pull_request_target event is required for autolabeler to support PRs from forks
+  # pull_request_target:
+  #   types: [opened, reopened, synchronize]
+      # write permission is required to create a github release
+      # write permission is required for autolabeler
+      # otherwise, read permission is required at least
+      # (Optional) GitHub Enterprise requires GHE_HOST variable set
+      #- name: Set GHE_HOST
+      #  run: |
+      #    echo ""GHE_HOST=${GITHUB_SERVER_URL##https:\\/\\/}"" >> $GITHUB_ENV
+      # Drafts your next Release notes as Pull Requests are merged into ""master""
+        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
+        # with:
+        #   config-name: my-config.yml
+        #   disable-autolabeler: true
+  ## What\xe2\x80\x99s Changed
+  ## Changes
+
+# Install dependencies
+# Run the tests
+# Run the app locally
+
+# Run the tests
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(1),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+30,"      # ...
+    # Run a job for each of the specified target architectures:
+      # ...
+      # ...
+      # ...
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+31,"      # Create check run
+      # Download file
+      # Update check run to completed, successful status
+  # As JSON
+  # As block scalar
+
+##[warning]Unexpected input \'repository\', valid inputs are [\'route\', \'mediaType\']
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+32,"# ignore third_party code from clang-format checks","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+33,"
+# config/test.exs
+# Configure the database for local testing
+# Configure the database for GitHub Actions
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+34,"        # Due to https://github.com/actions/runner/issues/849, we have to use quotes for \'3.0\'
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+35,"          # open_pr: true
+          # open_pr: true
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+36,"# File: .github/workflows/pull-request.yml","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+37,"        # test against latest update of each major Java version, as well as specific updates of LTS versions:
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+38,"      # Find the PR associated with this push, if there is one.
+          # Can be ""open"", ""closed"", or ""all"".  Defaults to ""open"".
+      # This will echo ""Your PR is 7"", or be skipped if there is no current PR.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+39,"
+# Add \'label1\' to any changes within \'example\' folder or any subfolders
+# Add \'label2\' to any file changes within \'example2\' folder
+# Add label3 to any change to .txt files within the entire repository. Quotation marks are required for the leading asterisk
+
+# Add \'repo\' label to any root file changes
+# Add \'@domain/core\' label to any change within the \'core\' package
+# Add \'test\' label to any change to *.spec.js files within the source dir
+# Add \'source\' label to any change to src files within the source dir EXCEPT for the docs sub-folder
+# Add \'frontend` label to any change to *.js files as long as the `main.js` hasn\'t changed
+# Add the \'AnyChange\' label to any changes within the entire repository if the \'dot\' option is set to \'false\'
+# Add the \'AnyChange\' label to any changes within the entire repository if the \'dot\' option is set to \'true\'
+    # Label PRs 1, 2, and 3
+        # Put your commands for running frontend tests here
+        # Put your commands for running backend tests here
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+40,"    # GitHub should provide a ""pull_request_review_target"", but they don\'t and
+    # the action will fail if run on a forked PR.
+    # Specify the requirements as a YAML string. See below for the format of this string.
+    # The easiest way to generate this is probably to write your YAML, then put the `|`
+    # after the key to make it a string.
+    # Specify the path to the requirements file. See below for the format of
+    # this file.
+    # Specify the ""context"" for the status to set. This is what shows up in the
+    # PR\'s checks list.
+    # By default, \'review required\' statuses will be set to pending. Set
+    # this to instead fail the status checks instead of leaving them pending.
+    # By default required reviewers are not requested. Set this to true to
+    # request reviews.
+    # GitHub Access Token. The user associated with this token will show up
+    # as the ""creator"" of the status check, and must have access to read
+    # pull request data, create status checks (`repo:status`), and to read
+    # your organization\'s teams (`read:org`).
+
+# Documentation must be reviewed by the documentation team.
+# Everyone can update lockfiles, even if later rules might otherwise match.
+# The ""Some package"" team must approve anything in `packages/some-package/`.
+# Except for changes to `packages/some-package/composer.lock`, because the previous requirement consumed that path.
+# Any CSS and React .jsx files must be reviewed by a front-end developer AND by a designer,
+# OR by a member of the maintenance team.
+# All other files must be reviewed by the maintenance team.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+41,"    # Repository name with owner. For example, actions/checkout
+    # Default: ${{ github.repository }}
+    # The branch, tag or SHA to checkout. When checking out the repository that
+    # triggered a workflow, this defaults to the reference or SHA for that event.
+    # Otherwise, uses the default branch.
+    # Personal access token (PAT) used to fetch the repository. The PAT is configured
+    # with the local git config, which enables your scripts to run authenticated git
+    # commands. The post-job step removes the PAT.
+    #
+    # We recommend using a service account with the least permissions necessary. Also
+    # when generating a new PAT, select the least scopes necessary.
+    #
+    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    #
+    # Default: ${{ github.token }}
+    # SSH key used to fetch the repository. The SSH key is configured with the local
+    # git config, which enables your scripts to run authenticated git commands. The
+    # post-job step removes the SSH key.
+    #
+    # We recommend using a service account with the least permissions necessary.
+    #
+    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    # Known hosts in addition to the user and global host key database. The public SSH
+    # keys for a host may be obtained using the utility `ssh-keyscan`. For example,
+    # `ssh-keyscan github.com`. The public key for github.com is always implicitly
+    # added.
+    # Whether to perform strict host key checking. When true, adds the options
+    # `StrictHostKeyChecking=yes` and `CheckHostIP=no` to the SSH command line. Use
+    # the input `ssh-known-hosts` to configure additional hosts.
+    # Default: true
+    # Whether to configure the token or SSH key with the local git config
+    # Default: true
+    # Relative path under $GITHUB_WORKSPACE to place the repository
+    # Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching
+    # Default: true
+    # Do a sparse checkout on given patterns. Each pattern should be separated with
+    # new lines
+    # Default: null
+    # Specifies whether to use cone-mode when doing a sparse checkout.
+    # Default: true
+    # Number of commits to fetch. 0 indicates all history for all branches and tags.
+    # Default: 1
+    # Whether to download Git-LFS files
+    # Default: false
+    # Whether to checkout submodules: `true` to checkout submodules or `recursive` to
+    # recursively checkout submodules.
+    #
+    # When the `ssh-key` input is not provided, SSH URLs beginning with
+    # `git@github.com:` are converted to HTTPS.
+    #
+    # Default: false
+    # Add repository path as safe.directory for Git global config by running `git
+    # config --global --add safe.directory <path>`
+    # Default: true
+    # The base URL for the GitHub instance that you are trying to clone from, will use
+    # environment defaults to fetch from the same instance that the workflow is
+    # running from unless specified. Example URLs are https://github.com or
+    # https://my-ghes-server.example.com
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+42,"        # Due to https://github.com/actions/runner/issues/849, we have to use quotes for \'3.0\'
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+43,"    # The `GITHUB_TOKEN` or `COVERALLS_REPO_TOKEN`.
+    # Default: ${{ github.token }}
+    # Set to `true` if you are using parallel jobs, then use `parallel-finished: true` for the last action.
+    # Default: false
+    # Set to `true` for the last action when using `parallel: true`.
+    # Default: false
+    # Set to true to increase logger verbosity.
+    # Default: false
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+44,"      # `cargo check` command here will use installed `nightly`
+      # as it is set as an ""override"" for current directory
+","[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+45,"# Run workflow on commits to the `master` branch","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+46,"    # Main workflow job that builds, tests, etc.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+47,"
+      # https://github.com/docker/setup-qemu-action
+      # https://github.com/docker/setup-buildx-action
+  # Maintain dependencies for GitHub Actions
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(1),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+48,"          # note you\'ll typically need to create a personal access token
+          # with permissions to create releases in the other repo
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+49,"
+## Valid inputs
+# python -m pip install package1
+# python -m pip install package1==1.0.0
+# python -m pip install package1 package2
+# python -m pip install package1==1.0.0 package2
+# python -m pip install package1==1.0.0 package2==1.2.3
+## Invalid inputs
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+50,"    # Types of issues that will be processed
+    # Messages this action will apply to issues
+    # Labels this action will apply to issues
+    # Issue timing and upvote counting
+    # Testing/debugging options
+    # Leave this alone, or set to a PAT for the action to use
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+51,"      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      # Other steps that change files in the repository
+      # Commit all changed files back to the repository
+    # Optional. Commit message for the created commit.
+    # Defaults to ""Apply automatic changes""
+    # Optional. Local and remote branch name where commit is going to be pushed
+    #  to. Defaults to the current branch.
+    #  You might need to set `create_branch: true` if the branch does not exist.
+    # Optional. Options used by `git-commit`.
+    # See https://git-scm.com/docs/git-commit#_options
+    # Optional glob pattern of files which should be added to the commit
+    # Defaults to all (.)
+    # See the `pathspec`-documentation for git
+    # - https://git-scm.com/docs/git-add#Documentation/git-add.txt-ltpathspecgt82308203
+    # - https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
+    # Optional. Local file path to the repository.
+    # Defaults to the root of the repository.
+    # Optional commit user and author settings
+    # Optional. Tag name being created in the local repository and 
+    # pushed to remote repository and defined branch.
+    # Optional. Option used by `git-status` to determine if the repository is 
+    # dirty. See https://git-scm.com/docs/git-status#_options
+    # Optional. Options used by `git-add`.
+    # See https://git-scm.com/docs/git-add#_options
+    # Optional. Options used by `git-push`.
+    # See https://git-scm.com/docs/git-push#_options
+    # Optional. Disable dirty check and always try to create a commit and push
+    # Optional. Skip internal call to `git fetch`
+    # Optional. Skip internal call to `git checkout`
+    # Optional. Prevents the shell from expanding filenames. 
+    # Details: https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html
+    # Optional. Create given branch name in local and remote repository.
+      # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
+
+    # Building a multiline commit message
+    # Adjust to your liking
+    # Create a multiline string to be used by the git-auto-commit Action
+    # Quick and dirty step to get rid of the temporary file holding the commit message
+        # Checkout the fork/head-repository and push changes to the fork.
+        # If you skip this, the base repository will be checked out and changes
+        # will be committed to the base repository!
+        # Checkout the branch made in the fork. Will automatically push changes
+        # back to this branch.
+    # Fetch the last 2 commits instead of just 1. (Fetching just 1 commit would overwrite the whole history)
+# Other steps in your workflow to trigger a changed file
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+52,"# relative paths to source directories. More details and properties are described
+# in https://sonarcloud.io/documentation/project-administration/narrowing-the-focus/
+  # Trigger analysis when pushing in master or pull requests, and when creating
+  # a pull request.
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+","[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+53,"
+# Changelog
+## v1.0.0
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+54,"
+# .github/config/rubocop_linter_action.yml
+
+# .github/config/rubocop_linter_action.yml
+# Description: The name of the check that will be created.
+# Valid Options: A reasonably sized string.
+# Default: \'RuboCop Action\'
+# Description: Versions required to run your RuboCop checks.
+# Valid options: RuboCop and any RuboCop extension, by default the latest gem version will be used. You can explicitly state that
+# (not required) or use a version number, like \'1.5.1\'.
+# Default:
+#   versions:
+#     - rubocop: \'latest\'
+# Description: RuboCop configuration file path relative to the workspace.
+# Valid options: A valid file path inside of the workspace.
+# Default: nil
+# Note: This does not need to be filled out for RuboCop to still find your config.
+# Resource: https://rubocop.readthedocs.io/en/stable/configuration/
+# Run all cops enabled by configuration except this list.
+# Valid options: list of valid cop(s) and/or departments.
+# Default: nil
+# Resource: https://rubocop.readthedocs.io/en/stable/cops/
+# Minimum severity for exit with error code
+# Valid options: \'refactor\', \'convention\', \'warning\', \'error\', or \'fatal\'.
+# Default: \'warning\'
+# Resource: https://rubocop.readthedocs.io/en/stable/configuration/#severity
+# Whether or not to use --force-exclusion when building the rubocop command. Use this if you are only linting modified
+# files and typically excluded files have been changed. For example, if you exclude db/schema.rb in your rubocop.yml
+# but a change gets made, then with the check_scope config set to \'modified\' rubocop will lint db/schema.rb. If you set
+# this to true, rubocop will ignore it.
+# Valid options: true || false
+# Default: false
+# Instead of installing gems from rubygems, we can run `bundle install` on your project,
+# you would need to do this if you are using something like \'rubocop-github\' or if you don\'t
+# want to list out dependencies with the `versions` key.
+# Valid options: true || false
+# Default: false
+# The scope of code that RuboCop should lint. Use this if you only want to lint changed files. If this is not set
+# or not equal to \'modified\', RuboCop is run against the entire codebase. Note that this will not work on the master branch.
+# Valid options: \'modified\'
+# Default: nil
+# The base branch against which changes will be compared, if check_scope config is set to \'modified\'.
+# This setting is not used if check_scope != \'modified\'.
+# Valid options: \'origin/another_branch\'
+# Default: \'origin/master\'
+
+# \xe2\x9d\x8c Bad, use at your own risk!
+# \xe2\x9c\x85 Good
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+55,"        # ...
+            # ...
+            # ...
+
+#...
+            # ...
+
+#...
+            # ...
+    # ...
+      # Import config...
+  # ...
+    # Import config...
+  # ...
+    # Import config...
+    # ...
+","[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+56,"  # Try enabling auto-merge for all open pull requests. (Only recommended for testing.)
+  # Try enabling auto-merge for all open pull requests.
+  # Try enabling auto-merge when a pull request is approved. Note that this event skips the check
+  # for the pull request author association and instead checks the review author association.
+  # Try enabling auto-merge for a pull request when a draft is marked as \xe2\x80\x9cready for review\xe2\x80\x9d, when
+  # a required label is applied or when a \xe2\x80\x9cdo not merge\xe2\x80\x9d label is removed, or when a pull request
+  # is updated in any way (opened, synchronized, reopened, edited).
+  # Try enabling auto-merge for the specified pull request, review or all open pull requests if
+  # none is specified.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+57,"  # Check open pull requests for relevant labels and re-run the
+  # corresponding workflows if necessary.
+  # (Only recommended for testing.)
+  # Check open pull requests for relevant labels and re-run the
+  # corresponding workflows if necessary.
+  # Remove relevant labels when a pull request is closed or trigger
+  # a re-run when a relevant labels ia added or removed.
+  # Check open pull requests for relevant labels and re-run the
+  # corresponding workflows if necessary.
+  # Remove relevant labels when a workflow run finishes successfully.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+58,"    # Upload sources option
+    # This can be used to pass down any supported argument of the `upload sources` cli command, e.g.
+    # Upload translations options
+    # This can be used to pass down any supported argument of the `upload translations` cli command, e.g.
+    # Download sources options
+    # this can be used to pass down any supported argument of the `download sources` cli command, e.g.
+    # Download translations options
+    # this can be used to pass down any supported argument of the `download translations` cli command, e.g.
+    # This is the name of the git branch that Crowdin will create when opening a pull request.
+    # This branch does NOT need to be manually created. It will be created automatically by the action.
+    # This is the name of the git branch to with pull request will be created.
+    # If not specified default repository branch will be used.
+    # Global options
+    # This is the name of the top-level directory that Crowdin will use for files.
+    # Note that this is not a ""branch"" in the git sense, but more like a top-level directory in your Crowdin project.
+    # This branch does NOT need to be manually created. It will be created automatically by the action.
+    # GitHub (Enterprise) configuration
+    # For signed commits, add your ASCII-armored key and export ""gpg --armor --export-secret-key GPG_KEY_ID""
+    # Ensure that all emails are the same: for account profile that holds private key, the one specified during key generation, and for commit author (github_user_email parameter)
+    # Config options
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+59,"# .github/workflows/release.yml","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+60,"# .github/workflows/release.yml","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+61,"    # These permissions are needed to interact with GitHub\'s OIDC Token endpoint.
+
+# Your environment configuration
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+62,"  # push:
+  # ...
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+63,     "# Enable tmate debugging of manually-triggered workflows if the input option was provided","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+64,"        # Setting up Docker Buildx with docker-container driver is required
+        # at the moment to be able to use a subdirectory with Git context
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+65,"    # need at least 2 here so we can get a proper log in next step
+    # allow grep to fail
+      # add bare directory to list of updated paths when we see index.html
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+66,"
+# For exact version
+
+# For newest minor version 2.0
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+67,      "# All commands after this point have access to the AWS CLI","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+68,"# ignore third_party code from clang-format checks","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+69,"# .github/workflows/my-workflow.yml
+            # Make sure the @v0.7.0 matches the current version of the action
+            # ... other steps
+
+# ... contents as before
+        # build-push-action | docker [compose] build | etc.
+
+# Copy the two files in place and fix different path/locations inside the Docker image
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+70,"      # Or, if you\'re on Windows: echo ""Build number is ${env:BUILD_NUMBER}""
+    # Now you can pass ${{ steps.buildnumber.outputs.build_number }} to the next steps.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+71,"  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  # Replace pull_request with pull_request_target if you
+  # plan to use this action with forks, see the Limitations section
+# Down scope as necessary via https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
+      # Install your linters here
+          # Enable your linters here
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+      # ESLint and Prettier must be in `package.json`
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+          # Optional: Ignore warnings
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+72,    "# For example:","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+73,    "# For example:","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+74,"    # Any prerequisite steps
+    # Deploy to local repo
+    # Deploy to another repo
+# github.com:22 SSH-2.0-babeld-f345ed5d
+# github.com:22 SSH-2.0-babeld-f345ed5d
+# github.com:22 SSH-2.0-babeld-f345ed5d
+        # ...
+        # ...
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+75,"
+# rsa
+# ed25519
+
+# rsa
+# d25519
+
+# rsa
+# ed25519
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+76,"    # ...
+    # Publish generated site using GitHub Pages
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+77,"    # The host should always be Linux
+          # Not required, but speeds up builds by storing container images in
+          # a GitHub package registry.
+          # Set an output parameter `uname` for use in subsequent steps
+        # Echo the `uname` output parameter from the `runcmd` step
+    # The host should always be linux
+    # Run steps on a matrix of 4 arch/distro combinations
+          # Not required, but speeds up builds
+          # Create an artifacts directory
+          # Mount the artifacts directory as /artifacts in the container
+          # Pass some environment variables to the container
+          # The shell to run commands with in the container
+          # Install some dependencies in the container. This speeds up builds if
+          # you are also using githubToken. Any dependencies installed here will
+          # be part of the container image that gets cached, so subsequent
+          # builds don\'t have to re-install them. The image layer is cached
+          # publicly in your project\'s package repository, so it is vital that
+          # no secrets are present in the container state or logs.
+          # Produce a binary artifact and place it in the mounted volume
+        # Items placed in /artifacts in the container will be in
+        # ${PWD}/artifacts on the host.
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+78,"        # A personal access token for the GitHub repository in which the release will be created and edited.
+        # It is recommended to create the access token with the following scopes: `repo, user, admin:repo_hook`.
+      # This step reads a file from repo and use it for body of the release
+      # This works on any self-hosted runner OS
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+79,        "# Optional. Post a issue comment just before closing a pull request.\r","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+80,        "# Optional. Post a issue comment just before closing a pull request.","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+81,"      #- name: Run Tests
+      #  uses: actions/setup-node
+      #  run: node test.js
+      # ... etc
+","[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+82,"      # Sets the branch name as environment variable
+      # Creates a status check with link to preview
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+83,"# Add \'label1\' to any changes within \'example\' folder or any subfolders
+# Add \'label2\' to any file changes within \'example2\' folder
+
+# Add \'repo\' label to any root file changes
+# Add \'@domain/core\' label to any change within the \'core\' package
+# Add \'test\' label to any change to *.spec.js files within the source dir
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+84,"# example 1: on push to master
+
+# example 2: on merge to master from pull request (recommended)
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+85,  "# see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idcontinue-on-error","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+86,"    # Every day at 1am
+        # Optional inputs
+        # skip-tags: true
+        # skip-recent: 5
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
+87,"    # Run Image Actions when JPG, JPEG, PNG or WebP files are added or changed.\r
+    # See https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#onpushpull_requestpaths for reference.\r
+    # Only run on Pull Requests within the same repository, and not from forks.\r
+          # The `GITHUB_TOKEN` is automatically generated by GitHub and scoped only to the repository that is currently running the action. By default, the action can\xe2\x80\x99t update Pull Requests initiated from forked repositories.\r
+          # See https://docs.github.com/en/actions/reference/authentication-in-a-workflow and https://help.github.com/en/articles/virtual-environments-for-github-actions#token-permissions\r
+
+# Compress images on demand (workflow_dispatch), and at 11pm every Sunday (schedule).\r
+# Open a Pull Request if any images can be compressed.\r
+
+# Image Actions will run in the following scenarios:\r
+# - on Pull Requests containing images (not including forks)\r
+# - on pushing of images to `main` (for forks)\r
+# - on demand (https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/)\r
+# - at 11 PM every Sunday in anything gets missed with any of the above scenarios\r
+# For Pull Requests, the images are added to the PR.\r
+# For other scenarios, a new PR will be opened if any images are compressed.\r
+    # Only run on main repo on and PRs that match the main repo.\r
+          # For non-Pull Requests, run in compressOnly mode and we\'ll PR after.\r
+        # If it\'s not a Pull Request then commit any changes as a new PR.\r
+","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]",0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),1,tensor(1),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0),0,tensor(0)
