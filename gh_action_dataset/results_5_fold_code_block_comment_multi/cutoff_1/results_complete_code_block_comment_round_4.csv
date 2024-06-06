@@ -1,0 +1,70 @@
+project,actual,predicted
+ZedThree/clang-tidy-review,"Code review,Code quality",Continuous integration
+samuelmeuli/action-snapcraft,"Dependency management,Publishing",Utilities
+peter-evans/enable-pull-request-automerge,"Project management,Continuous integration",Utilities
+SwiftDocOrg/swift-doc,"Code quality,Publishing",Continuous integration
+filipstefansson/uuid-action,"Deployment,Utilities",Continuous integration
+brittonhayes/validate-yaml,"Code review,Code quality",Code quality
+aws-actions/aws-cloudformation-github-deploy,"Publishing,Deployment",Continuous integration
+Khan/pull-request-workflow-cancel,"Code review,Continuous integration",Code quality
+mislav/bump-homebrew-formula-action,"Publishing,Open Source management",Publishing
+Chocobo1/setup-ccache-action,"Continuous integration,Utilities",Continuous integration
+n1hility/cancel-previous-runs,Continuous integration,Publishing
+kiegroup/github-action-build-chain,"Continuous integration,Utilities",Dependency management
+arma-actions/workshop-upload,"Publishing,Utilities",Deployment
+actions/stale,Utilities,Utilities
+kdheepak/panvimdoc,"Continuous integration,Deployment",Continuous integration
+oprypin/find-latest-tag,"Dependency management,Continuous integration",Continuous integration
+gaurav-nelson/github-action-markdown-link-check,"Testing,Continuous integration",Utilities
+peaceiris/actions-gh-pages,"Publishing,Deployment",Publishing
+yi-Xu-0100/traffic-to-badge,"Monitoring,API management",Utilities
+jarylc/github-app-token,"Security,Deployment",Continuous integration
+paambaati/codeclimate-action,"Code review,Code quality",Testing
+Qard/heaviest-objects-in-the-universe,"Dependency management,Code quality",Project management
+Roang-zero1/github-create-release-action,"Publishing,Continuous integration",Continuous integration
+codepunkt/npm-lockfile-changes,"Dependency management,Continuous integration",Dependency management
+kentaro-m/auto-assign-action,"Code review,Open Source management",Utilities
+archive/github-actions-slack,"Chat,Utilities",Dependency management
+imjohnbo/gh-polls-bot-action,"Open Source management,Utilities",Continuous integration
+dropseed/changerelease,"Publishing,Project management",Continuous integration
+chetan/invalidate-cloudfront-action,"Publishing,Deployment",Code quality
+lukka/run-cmake,"Dependency management,Continuous integration",Dependency management
+ttionya/Repository-Sync-Hub,"Open Source management,Continuous integration",Continuous integration
+azure/webapps-deploy,"Continuous integration,Deployment",Continuous integration
+axel-op/googlejavaformat-action,"Code quality,Continuous integration",Deployment
+mfinelli/setup-imagemagick,"Dependency management,Utilities",Utilities
+SeokminHong/pages-action,"Publishing,Deployment",Continuous integration
+BirthdayResearch/oss-governance-bot,"Project management,Open Source management",Utilities
+wearerequired/lint-action,"Testing,Code quality",Continuous integration
+dangoslen/changelog-enforcer,"Project management,Utilities",Utilities
+yuichielectric/dive-action,"Continuous integration,Container CI",Utilities
+julia-actions/julia-runtest,"Testing,Continuous integration",Deployment
+xmake-io/github-action-setup-xmake,"IDEs,Utilities",Publishing
+MirageNet/unity-runner,"Continuous integration,Desktop tools",Continuous integration
+sbeyer/include-guards-check-action,"Code review,Code quality",Security
+peter-evans/autopep8,"Code quality,Utilities",Utilities
+yinlinchen/amplify-preview-actions,"Code review,Continuous integration",Utilities
+styfle/cancel-workflow-action,"Testing,Continuous integration",Utilities
+treosh/lighthouse-ci-action,"Monitoring,Continuous integration",Continuous integration
+aws-actions/configure-aws-credentials,"Continuous integration,Deployment",Dependency management
+JuliaRegistries/TagBot,Continuous integration,Utilities
+jiro4989/build-deb-action,"Testing,Continuous integration",Utilities
+mateothegreat/action-release,"Deployment,Utilities",Utilities
+gleam-lang/setup-erlang,Continuous integration,Continuous integration
+burrunan/gradle-cache-action,"Continuous integration,Utilities",Utilities
+ArtemSBulgakov/buildozer-action,"Publishing,Deployment",Utilities
+ashutoshvarma/action-cmake-build,"Testing,Continuous integration",Continuous integration
+preactjs/compressed-size-action,"Reporting,Code quality",Utilities
+calibreapp/image-actions,Utilities,Utilities
+amondnet/vercel-action,"Continuous integration,Deployment",Utilities
+redhat-plumbers-in-action/advanced-issue-labeler,"Reporting,Project management",Testing
+shogo82148/actions-setup-redis,"Testing,Utilities",Reporting
+actionshub/markdownlint,"Code quality,Continuous integration",Code quality
+oxsecurity/megalinter,"Code quality,Continuous integration",Utilities
+crondaemon/close-pr,"Code review,Utilities",Utilities
+dorny/test-reporter,"Testing,Reporting",Testing
+jpmcb/prow-github-actions,"Project management,Continuous integration",Utilities
+wagoid/commitlint-github-action,"Code review,Code quality",Utilities
+jetli/trunk-action,"Continuous integration,Deployment",Continuous integration
+Gottox/irc-message-action,"Chat,Continuous integration",Utilities
+thatisuday/go-cross-build,"Deployment,Utilities",Continuous integration
